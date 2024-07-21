@@ -69,7 +69,7 @@ cmd = "git clone https://github.com/XronTrix10/Telegram-Leecher"
 proc = subprocess.run(cmd, shell=True)
 cmd = "apt update && apt install ffmpeg aria2"
 proc = subprocess.run(cmd, shell=True)
-cmd = "pip3 install -r /work/Telegram-Leecher/requirements.txt"
+cmd = "pip3 install -r /work/Telegram-Leecher-Jupyter/requirements.txt"
 proc = subprocess.run(cmd, shell=True)
 
 credentials = {
@@ -80,14 +80,14 @@ credentials = {
     "DUMP_ID": DUMP_ID,
 }
 
-with open('/work/Telegram-Leecher/credentials.json', 'w') as file:
+with open('/work/Telegram-Leecher-Jupyter/credentials.json', 'w') as file:
     file.write(json.dumps(credentials))
 
 Working = False
 
-if os.path.exists("/work/Telegram-Leecher/my_bot.session"):
-    os.remove("/work/Telegram-Leecher/my_bot.session") # Remove previous bot session
+if os.path.exists("/work/Telegram-Leecher-Jupyter/my_bot.session"):
+    os.remove("/work/Telegram-Leecher-Jupyter/my_bot.session") # Remove previous bot session
     
 print("\rStarting Bot....")
 
-!cd /work/Telegram-Leecher/ && python3 -m colab_leecher #type:ignore
+!cd /work/Telegram-Leecher-Jupyter/ && python3 -m colab_leecher #type:ignore
